@@ -847,6 +847,176 @@
         height:auto!important;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE RESPONSIVE FIX
+   Placed last so it wins over all conflicting desktop rules
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Nav logo ── */
+  .nav-logo img {
+    height: 60px !important;
+  }
+
+  /* ── Hero section height & overflow ── */
+  #hero {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-top: 70px !important;
+    padding-bottom: 2rem !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  /* ── Hero content layout ── */
+  .hero-content {
+    flex-direction: column-reverse !important;
+    text-align: center !important;
+    height: auto !important;
+    min-height: unset !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* ── Hero columns – clear the large desktop paddings ── */
+  .hero-left {
+    flex: 1 1 100% !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    width: 100% !important;
+  }
+
+  .hero-right {
+    flex: 0 0 auto !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* ── Hero photo ── */
+  .hero-photo {
+    width: 200px !important;
+    max-width: 55vw !important;
+    height: auto !important;
+  }
+
+  /* ── Hero text & name ── */
+  .hero-name {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+  }
+
+  .hero-bio {
+    max-width: 100% !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ── Hero CTA buttons – center the flex row ── */
+  .hero-actions {
+    justify-content: center !important;
+    gap: 0.7rem !important;
+  }
+
+  /* ── Hero social links – center ── */
+  .hero-socials {
+    justify-content: center !important;
+  }
+
+  /* ── About grid gap – fix the gap:80px override ── */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* ── Experience timeline – reduce left indent ── */
+  .exp-timeline {
+    padding-left: 1.5rem !important;
+  }
+
+  /* ── Research card padding ── */
+  .research-card {
+    padding: 1.5rem !important;
+  }
+
+  /* ── Conference badges stack vertically ── */
+  .conf-row {
+    flex-direction: column !important;
+  }
+
+  /* ── Certifications grid – single column ── */
+  .certs-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Contact link – prevent email/URL text overflow ── */
+  .cl-text span:last-child {
+    word-break: break-all !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* ── Contact grid gap ── */
+  .contact-grid {
+    gap: 2rem !important;
+  }
+
+  /* ── Toast – prevent overflow on narrow screens ── */
+  #toast {
+    max-width: 88vw !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  /* ── Floating buttons – keep inside screen ── */
+  #btt {
+    right: 1rem !important;
+    bottom: 5.5rem !important;
+  }
+
+  #resume-float {
+    right: 1rem !important;
+    bottom: 1rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.6rem 1rem !important;
+  }
+
+  /* ── Sections – slightly less vertical padding ── */
+  section {
+    padding: 3.5rem 0 !important;
+  }
+}
+
+/* ── Extra-small phones (≤ 400px) ── */
+@media (max-width: 400px) {
+  .hero-name {
+    font-size: clamp(1.8rem, 9vw, 2.4rem) !important;
+  }
+
+  .hero-photo {
+    width: 160px !important;
+    max-width: 50vw !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .hero-actions a {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .btn-resume {
+    justify-content: center !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -878,7 +1048,7 @@
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <!-- ── FLOATING RESUME BUTTON ── -->
-<a id="resume-float" href="Rituraj_Dusane_Resume.pdf" download="Rituraj_Dusane_Resume.pdf" onclick="fireConfetti()">
+<a id="resume-float" href="RITURAJ_DUSANE_RESUME.pdf" download="RITURAJ_DUSANE_RESUME.pdf" onclick="fireConfetti()">
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
   Download Resume
 </a>
@@ -895,7 +1065,7 @@
   <a href="#projects" onclick="toggleMenu()">Projects</a>
   <a href="#research" onclick="toggleMenu()">Research</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="Rituraj_Dusane_Resume.pdf" download onclick="fireConfetti();toggleMenu();" style="color:var(--accent-l);font-size:1.1rem">⬇ Resume</a>
+  <a href="RITURAJ_DUSANE_RESUME.pdff" download onclick="fireConfetti();toggleMenu();" style="color:var(--accent-l);font-size:1.1rem">⬇ Resume</a>
 </div>
 
 <!-- ── NAV ── -->
@@ -913,7 +1083,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="Rituraj_Dusane_Resume.pdf" download="Rituraj_Dusane_Resume.pdf" class="nav-resume ripple-host" onclick="fireConfetti()">⬇ Resume</a>
+      <a href="RITURAJ_DUSANE_RESUME.pdf" download=RITURAJ_DUSANE_RESUME.pdf class="nav-resume ripple-host" onclick="fireConfetti()">⬇ Resume</a>
       <a href="#contact" class="nav-hire ripple-host">Hire Me</a>
     </div>
     <div class="hamburger" onclick="toggleMenu()">
@@ -940,14 +1110,14 @@
     </div>
     <p class="hero-bio">
       B.Tech CS (ML-AI) student at <strong>P.P. Savani University</strong> building
-      intelligent systems that solve real-world problems. From <strong>CNN-based plant disease detection</strong>
+      intelligent systems that solve real-world problems. From <strong>CNN-based plant disease detection with RAG Chatbot</strong>
       to <strong>deepfake analysis</strong> and facial recognition — I bridge deep learning research
       with production-ready applications. <strong>Published researcher</strong> at CICON 2026 &amp; ICACS 2026.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary ripple-host">View Projects ↓</a>
       <a href="#contact" class="btn-outline ripple-host">Let's Connect</a>
-      <a href="Rituraj_Dusane_Resume.pdf" download="Rituraj_Dusane_Resume.pdf" class="btn-resume ripple-host" onclick="fireConfetti()">
+      <a href="RITURAJ_DUSANE_RESUME.pdf" download="RITURAJ_DUSANE_RESUME.pdf" class="btn-resume ripple-host" onclick="fireConfetti()">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Resume
       </a>
@@ -973,7 +1143,7 @@
       <div class="about-copy fi">
         <h2 class="s-title">Building AI that works<br/>in the real world</h2>
         <p>I'm a final-year B.Tech student in <strong>Computer Science Engineering (ML-AI)</strong> at P.P. Savani University with a <strong>CGPA of 8.31</strong>. My work lives at the intersection of machine learning research and real-world implementation.</p>
-        <p>I've built systems spanning <strong>computer vision</strong>, deep learning, NLP, and intelligent automation — from agricultural AI to identity verification. My plant disease detection research earned acceptance at two international AI conferences in 2026.</p>
+        <p>I've built systems spanning <strong>computer vision, deep learning, NLP, and intelligent automation</strong> — from agricultural AI to identity verification. My plant disease detection research earned acceptance at two international AI conferences in 2026.</p>
         <p>Beyond the code, I bring a <strong>product mindset</strong>, strong communication, and a drive to adapt fast. Seeking AIML developer roles where I can contribute meaningfully from day one.</p>
         <div class="trait-row">
           <span class="trait">Problem Solver</span>
@@ -1332,8 +1502,8 @@
       <div class="fi">
         <div class="cform">
           <div class="form-row-2">
-            <div class="fg"><label>Your Name *</label><input type="text" id="cf-name" placeholder="John Doe"/></div>
-            <div class="fg"><label>Email Address *</label><input type="email" id="cf-email" placeholder="john@example.com"/></div>
+            <div class="fg"><label>Your Name *</label><input type="text" id="cf-name" placeholder="Name"/></div>
+            <div class="fg"><label>Email Address *</label><input type="email" id="cf-email" placeholder="Email Address"/></div>
           </div>
           <div class="fg"><label>Subject</label><input type="text" id="cf-subject" placeholder="Internship · Collaboration · Project"/></div>
           <div class="fg"><label>Message *</label><textarea id="cf-msg" rows="5" placeholder="Hi Rituraj, I'd love to discuss…"></textarea></div>
